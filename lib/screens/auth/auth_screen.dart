@@ -86,26 +86,27 @@ class AuthScreenState extends ConsumerState<AuthScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  width: 300,
-                  height: 300,
-                  child: Image.asset('assets/img/logo.png'),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    width: 300,
+                    height: 300,
+                    child: Image.asset('assets/img/logo.png'),
+                  ),
                 ),
-              ),
-              SingleChildScrollView(
-                child: Column(
+                Column(
                   children: [
                     Form(
                       key: _formKey,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 100),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: size.width * 0.1),
                         child: Column(
                           children: [
                             CustomInputField(
@@ -120,7 +121,7 @@ class AuthScreenState extends ConsumerState<AuthScreen> {
                               controller: _passwordController,
                               keyboardType: TextInputType.visiblePassword,
                               labelText: 'Contraseña',
-                              hintText: '●●●●●●',
+                              hintText: '••••••••••',
                               obscureText: obscureText,
                               suffixIcon: Icons.visibility_rounded,
                               isPassword: true,
@@ -142,35 +143,35 @@ class AuthScreenState extends ConsumerState<AuthScreen> {
                     ),
                   ],
                 ),
-              ),
-              TextButton(
-                onPressed: () {
-                  // Lógica para crear una nueva cuenta
-                },
-                child: RichText(
-                  text: const TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "¿Aún no tienes cuenta? ",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
+                TextButton(
+                  onPressed: () {
+                    // Lógica para crear una nueva cuenta
+                  },
+                  child: RichText(
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "¿Aún no tienes cuenta? ",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text: "Crear una",
-                        style: TextStyle(
-                          color: Colors
-                              .red, // Color rojo para el texto "Crear una"
-                          fontWeight: FontWeight.normal,
+                        TextSpan(
+                          text: "Crear una",
+                          style: TextStyle(
+                            color: Colors
+                                .red, // Color rojo para el texto "Crear una"
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: Platform.isIOS ? 20 : 0)
-            ],
+                SizedBox(height: Platform.isIOS ? 20 : 0)
+              ],
+            ),
           ),
         ),
       ),

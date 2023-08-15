@@ -23,7 +23,8 @@ class InfoFincaPopUp extends StatelessWidget {
             children: [
               Container(
                 width: size.width * 0.2,
-                height: size.height * 0.1,
+                height: size.height *
+                    0.15, // Ajusta la proporción de altura según tus necesidades
                 margin: const EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -36,17 +37,21 @@ class InfoFincaPopUp extends StatelessWidget {
               ),
               Text(
                 finca.propertyNumber!,
-                style: const TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: AppTheme.primaryLight),
+                style: TextStyle(
+                  fontSize: size.width *
+                      0.04, // Ajusta el factor multiplicativo según tus necesidades
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.primaryLight,
+                ),
               ),
               Text(
                 finca.condominium!.nameCondominium!,
-                style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal,
-                    color: Color.fromARGB(255, 0, 0, 0)),
+                style: TextStyle(
+                  fontSize: size.width *
+                      0.03, // Ajusta el factor multiplicativo según tus necesidades
+                  fontWeight: FontWeight.normal,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
               ),
             ],
           ),
@@ -75,8 +80,7 @@ class InfoFincaPopUp extends StatelessWidget {
                 ],
               ),
               Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.start, // Alineación cruzada a la derecha
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     finca.rented! ? 'Si' : 'No',

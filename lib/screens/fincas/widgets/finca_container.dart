@@ -18,7 +18,11 @@ class FincaContainer extends StatelessWidget {
       children: [
         SizedBox(
           width: size.width > 1000 ? 250 : 200,
-          height: size.width > 1000 ? 230 : 200,
+          height: size.width > 1000
+              ? 230
+              : size.width > 600
+                  ? 200
+                  : 150,
           child: Container(
             decoration: ShapeDecoration(
               image: DecorationImage(

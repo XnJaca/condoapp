@@ -1,10 +1,6 @@
 import 'package:condo_app/config/generated/generated.dart';
 import 'package:condo_app/config/theme/app_theme.dart';
-import 'package:condo_app/models/models.dart';
-import 'package:condo_app/providers/condomio_provider.dart';
-import 'package:condo_app/providers/finca_provider.dart';
 import 'package:condo_app/screens/fincas/fincas.dart';
-import 'package:condo_app/screens/fincas/widgets/widgets.dart';
 import 'package:condo_app/screens/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

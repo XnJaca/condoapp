@@ -14,23 +14,27 @@ class FincaScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
 
+    print(size);
     void showDialog(Finca finca) {
+      final size = MediaQuery.of(context).size;
+
       slideDialog.showSlideDialog(
         context: context,
         child: Container(
-            width: size.width * 0.8,
-            height: size.height * 0.2,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.white,
-            ),
-            child: InfoFincaPopUp(
-              size: size,
-              finca: finca,
-            )),
+          width: size.width * 0.8,
+          height: size.height *
+              0.3, // Ajusta la proporción de altura según tus necesidades
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white,
+          ),
+          child: InfoFincaPopUp(
+            size: size,
+            finca: finca,
+          ),
+        ),
         barrierColor: Colors.white.withOpacity(0.7),
         pillColor: AppTheme.primaryLight,
-        // F2F2F2
         backgroundColor: const Color(0xffF2F2F2),
       );
     }
@@ -48,8 +52,12 @@ class FincaScreen extends ConsumerWidget {
                 padding: const EdgeInsets.all(20),
                 crossAxisSpacing: 30,
                 mainAxisSpacing: 30,
-                crossAxisCount: 3,
-                childAspectRatio: size.width > 1000 ? 1.7 : 1,
+                crossAxisCount: fincas.length > 1 ? 2 : 1,
+                childAspectRatio: size.width > 1000
+                    ? 1.2
+                    : size.width > 600
+                        ? 1.5
+                        : 1,
                 children: fincas.map((finca) {
                   return GestureDetector(
                     onTap: () {
