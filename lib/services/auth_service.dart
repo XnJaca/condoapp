@@ -1,5 +1,4 @@
 import 'package:condo_app/models/person.dart';
-import 'package:condo_app/providers/auth_provider.dart';
 import 'package:condo_app/utils/secure_storage.dart';
 import 'package:dio/dio.dart';
 

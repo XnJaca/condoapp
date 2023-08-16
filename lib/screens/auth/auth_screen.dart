@@ -145,7 +145,7 @@ class AuthScreenState extends ConsumerState<AuthScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Lógica para crear una nueva cuenta
+                    context.push('/register');
                   },
                   child: RichText(
                     text: const TextSpan(

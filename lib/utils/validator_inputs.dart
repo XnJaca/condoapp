@@ -9,6 +9,13 @@ String? validateEmail(String? value) {
   return null;
 }
 
+String? validateEmptyInput(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'Este campo no puede estar vacio.';
+  }
+  return null;
+}
+
 String? validatePassword(String? value) {
   if (value == null || value.isEmpty) {
     return 'Por favor, ingresa tu contraseña.';

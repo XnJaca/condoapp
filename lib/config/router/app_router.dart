@@ -1,6 +1,7 @@
 import 'package:condo_app/models/person.dart';
 import 'package:condo_app/providers/auth_provider.dart';
 import 'package:condo_app/screens/auth/auth_screen.dart';
+import 'package:condo_app/screens/auth/register_screen.dart';
 import 'package:condo_app/screens/fincas/lobby_screen.dart';
 import 'package:condo_app/screens/home/home_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,6 +21,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/auth',
         builder: (context, state) => const AuthScreen(),
+      ),
+      GoRoute(
+        path: '/register',
+        builder: (context, state) => const RegisterScreen(),
       ),
       GoRoute(
           path: '/casas/:id',

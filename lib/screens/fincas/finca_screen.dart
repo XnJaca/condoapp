@@ -14,7 +14,7 @@ class FincaScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
 
-    print(size);
+    // print(size);
     void showDialog(Finca finca) {
       final size = MediaQuery.of(context).size;
 

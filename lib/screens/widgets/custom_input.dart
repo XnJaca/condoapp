@@ -7,7 +7,7 @@ class CustomInputField extends StatefulWidget {
   final String labelText;
   final String hintText;
   final bool obscureText;
-  final IconData suffixIcon;
+  final IconData? suffixIcon;
   final bool isPassword;
   final String? Function(String?)? validator;
 
@@ -18,7 +18,7 @@ class CustomInputField extends StatefulWidget {
     required this.labelText,
     this.hintText = '',
     this.obscureText = false,
-    this.suffixIcon = Icons.visibility_rounded,
+    this.suffixIcon,
     this.isPassword = false,
     this.validator,
   }) : super(key: key);
@@ -41,11 +41,14 @@ class _CustomInputFieldState extends State<CustomInputField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.labelText,
-          style: const TextStyle(
-            fontFamily: "Nunito",
-            fontWeight: FontWeight.normal,
+        Container(
+          margin: EdgeInsets.only(left: 20),
+          child: Text(
+            widget.labelText,
+            style: const TextStyle(
+              fontFamily: "Nunito",
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
         const SizedBox(height: 6.0),
@@ -73,23 +76,22 @@ class _CustomInputFieldState extends State<CustomInputField> {
                 border: InputBorder.none,
                 filled: true,
                 fillColor: Colors.white,
-                suffixIcon: GestureDetector(
-                    onTap: () {
-                      if (widget.isPassword) {
-                        setState(() {
-                          _obscureText = !_obscureText;
-                        });
-                      }
-                    },
-                    child: _obscureText
-                        ? Icon(
-                            !_obscureText
-                                ? widget.suffixIcon
-                                : Icons.visibility_off_rounded,
-                            color: AppTheme.primaryLight,
-                          )
-                        : Icon(widget.suffixIcon,
-                            color: AppTheme.primaryLight)),
+                suffixIcon: _obscureText
+                    ? GestureDetector(
+                        onTap: () {
+                          if (widget.isPassword) {
+                            setState(() {
+                              _obscureText = !_obscureText;
+                            });
+                          }
+                        },
+                        child: Icon(
+                          !_obscureText
+                              ? widget.suffixIcon
+                              : Icons.visibility_off_rounded,
+                          color: AppTheme.primaryLight,
+                        ))
+                    : null,
               ),
             ),
           ),
