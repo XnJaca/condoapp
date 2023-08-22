@@ -4,6 +4,12 @@ class AppTheme {
   static const bool isDarkTheme = false;
 
   static const Color primaryLight = Color(0xff007979);
+  // E95154
+  static const Color primaryRed = Color(0xffE95154);
+  // E7D8B9
+  static const Color primaryYellow = Color(0xffE7D8B9);
+  // 97B69E
+  static const Color secondaryGreen = Color(0xff97B69E);
   static const Color colorIconsLight = primaryLight;
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(

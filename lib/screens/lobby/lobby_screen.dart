@@ -1,6 +1,9 @@
 import 'package:condo_app/config/generated/generated.dart';
+import 'package:condo_app/config/router/app_router.dart';
 import 'package:condo_app/config/theme/app_theme.dart';
+import 'package:condo_app/providers/general_providers.dart';
 import 'package:condo_app/screens/fincas/fincas.dart';
+import 'package:condo_app/screens/screens.dart';
 import 'package:condo_app/screens/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,22 +32,24 @@ class LobbyScreenState extends ConsumerState<LobbyScreen> {
   Widget build(BuildContext context) {
     final screens = [
       const FincaScreen(),
-      const Center(child: Text("Tareas Screen")),
-      // const ReportScreen(),
-      const Center(child: Text("Comunicados Screen")),
-      // const MessageScreen(),
+      const VisitorsScreen(),
+      const Center(child: Text("Reportes Screen")),
+      const BoardScreen(),
+      const ProfileScreen(false),
     ];
-
-    // final size = MediaQuery.of(context).size;
 
     return Scaffold(
         appBar: AppBar(
           title: Image.asset("assets/img/logoAppBar.png", width: 70),
           centerTitle: true,
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-          leading: const Icon(
-            Icons.business,
-            color: AppTheme.colorIconsLight,
+          leading: IconButton(
+            icon: const Icon(Icons.business_sharp),
+            color: AppTheme.primaryLight,
+            onPressed: () {
+              ref.read(condominioId.notifier).state = '';
+              ref.read(appRouterProvider).go('/');
+            },
           ),
           actions: [
             ActionsAppBar(ref: ref),
@@ -72,20 +77,20 @@ class LobbyScreenState extends ConsumerState<LobbyScreen> {
           title: Text(AppLocalizations.of(context).menu_home),
         ),
         SalomonBottomBarItem(
-          icon: const Icon(Icons.add_task),
-          title: Text(AppLocalizations.of(context).menu_task),
+          icon: const Icon(Icons.group_outlined),
+          title: Text(AppLocalizations.of(context).menu_visitors),
+        ),
+        SalomonBottomBarItem(
+          icon: const Icon(Icons.calendar_month_outlined),
+          title: Text(AppLocalizations.of(context).menu_reservations),
         ),
         SalomonBottomBarItem(
           icon: const Icon(Icons.newspaper_rounded),
-          title: Text(AppLocalizations.of(context).menu_report),
-        ),
-        SalomonBottomBarItem(
-          icon: const Icon(Icons.perm_contact_calendar),
           title: Text(AppLocalizations.of(context).menu_pizarra),
         ),
         SalomonBottomBarItem(
-          icon: const Icon(Icons.local_post_office_outlined),
-          title: Text(AppLocalizations.of(context).title_message),
+          icon: const Icon(Icons.person),
+          title: Text(AppLocalizations.of(context).title_account),
         ),
       ],
     );

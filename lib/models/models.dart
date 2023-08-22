@@ -1,6 +1,9 @@
+export 'board.dart';
 export 'condominio.dart';
 export 'finca.dart';
+export 'message.dart';
 export 'person.dart';
 export 'report.dart';
 export 'tipo_identificacion.dart';
 export 'user.dart';
+export 'visitor.dart';

@@ -1,6 +1,6 @@
 import 'package:condo_app/config/constants/api_routes.dart';
 import 'package:condo_app/models/models.dart';
-import 'package:condo_app/providers/auth_provider.dart';
+import 'package:condo_app/providers/user_provider.dart';
 import 'package:condo_app/providers/general_providers.dart';
 import 'package:dio/dio.dart';
 

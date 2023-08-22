@@ -1,10 +1,8 @@
 {
-    "message_sucess": "Se registro exitosamente.",
-    "message_error": "Se presentó un problema interno.",
-    "message_email": "Se requiere el correo.",
-    "message_email2": "El valor ingresado no luce como un correo.",
-    "message_phone": "Se requiere el teléfono.",
-    "message_identification": "Identification required",
+    "msg_sucess": "Operación realizada con éxito.",
+    "msg_required": "Este campo es requerido.",
+    "msg_error_500 ": "Se presentó un problema interno.",
+    "msg_email_format_error": "El Formato de correo es incorrecto.",
     "message_error_recovery": "Datos no coinciden con lo registrado.",
     "message_verify_recovery": "Verificación exitosa, pronto recibira un correo con una contraseña temporal.",
     "message_password": "Se requiere la contrasena",
@@ -48,6 +46,7 @@
     "title_register": "  Registrar Usuario",
     "tittle_register_general": "Información General",
     "tittle_register_user": "Información Usuario",
+    "title_register_contact_information": "Información de Contacto",
     "menu_task": "Tareas",
     "menu_report": "Reportes",
     "menu_pizarra": "Comunicados",
@@ -60,5 +59,6 @@
     "title_message": "Mensajes",
     "tab_message_send": "Enviado",
     "tab_message_received": "Recibido",
-    "not_message": "No hay mensajes"
+    "not_message": "No hay mensajes",
+    "this_field_required": "Este campo no puede estar vacio."
 }

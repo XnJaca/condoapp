@@ -1,6 +1,7 @@
 import 'package:condo_app/config/router/app_router.dart';
 import 'package:condo_app/providers/condomio_provider.dart';
 import 'package:condo_app/providers/general_providers.dart';
+import 'package:condo_app/screens/home/widgets/condominio_card.dart';
 import 'package:condo_app/screens/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

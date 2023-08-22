@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:condo_app/models/person.dart';
+import 'package:condo_app/providers/providers.dart';
 import 'package:condo_app/utils/secure_storage.dart';
 import 'package:dio/dio.dart';
 
@@ -46,5 +49,39 @@ class AuthService {
       }
       return null;
     });
+  }
+
+  Future<Person?> saveDataUser(ref, Map<String, dynamic> person) async {
+    final Person user = ref.read(userProvider);
+    final response = await dio.put(
+      "${ApiRoute.GET_USER}${user.id}",
+      data: jsonEncode(person),
+      options: Options(
+        headers: {"Authorization": user.token},
+      ),
+    );
+
+    if (response.statusCode == 200 && response.data["Status"] == 'SUCCESS') {
+      final jsonResponse = await dio.get(
+        "${ApiRoute.GET_USER}${user.id}",
+        options: Options(
+          headers: {"Authorization": user.token},
+        ),
+      );
+
+      if (jsonResponse.statusCode == 200 &&
+          jsonResponse.data["Result"] != null) {
+        Person authUser = Person.fromJson(jsonResponse.data["Result"]);
+        authUser.token = user.token;
+
+        // Store user in secure storage
+
+        return authUser;
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
   }
 }

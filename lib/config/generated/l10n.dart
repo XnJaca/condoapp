@@ -541,20 +541,20 @@ class AppLocalizations {
   }
 
   /// `Task`
-  String get menu_task {
+  String get menu_visitors {
     return Intl.message(
-      'Task',
-      name: 'menu_task',
+      'Visitors',
+      name: 'menu_visitors',
       desc: '',
       args: [],
     );
   }
 
-  /// `Reports`
-  String get menu_report {
+  /// `Reservations`
+  String get menu_reservations {
     return Intl.message(
-      'Reports',
-      name: 'menu_report',
+      'Reservations',
+      name: 'menu_reservations',
       desc: '',
       args: [],
     );

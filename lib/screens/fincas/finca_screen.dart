@@ -14,7 +14,7 @@ class FincaScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
 
-    // print(size);
+    print(size);
     void showDialog(Finca finca) {
       final size = MediaQuery.of(context).size;
 
@@ -52,12 +52,12 @@ class FincaScreen extends ConsumerWidget {
                 padding: const EdgeInsets.all(20),
                 crossAxisSpacing: 30,
                 mainAxisSpacing: 30,
-                crossAxisCount: fincas.length > 1 ? 2 : 1,
-                childAspectRatio: size.width > 1000
-                    ? 1.2
-                    : size.width > 600
-                        ? 1.5
+                crossAxisCount: size.width < 500
+                    ? 1
+                    : fincas.length > 1
+                        ? 2
                         : 1,
+                childAspectRatio: size.width < 500 ? 2 : size.width * 0.0020,
                 children: fincas.map((finca) {
                   return GestureDetector(
                     onTap: () {

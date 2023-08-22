@@ -13,6 +13,7 @@ class Person {
   final String? deletedAt;
   final String password;
   final String? role;
+  final String? newPassword;
   String? token;
 
   Person({
@@ -31,26 +32,33 @@ class Person {
     required this.password,
     required this.role,
     this.token,
+    this.newPassword,
   });
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
-        id: json["Id"],
-        indentificationType: json["IndentificationType"],
-        indentification: json["Indentification"],
-        firstname: json["Firstname"],
-        lastname1: json["Lastname1"],
-        lastname2: json["Lastname2"],
-        email: json["Email"],
-        telephone: json["Telephone"],
+        id: json["Id"] ?? json["id"],
+        indentificationType: json["IndentificationType"] ??
+            json["indentificationType"] ??
+            json["IdentificationType"],
+        indentification: json["Indentification"] ??
+            json["indentification"] ??
+            json["Identification"],
+        firstname: json["Firstname"] ?? json["firstname"],
+        lastname1: json["Lastname1"] ?? json["lastName1"] ?? json["lastname1"],
+        lastname2: json["Lastname2"] ?? json["lastName2"] ?? json["lastname2"],
+        email: json["Email"] ?? json["email"],
+        telephone:
+            json["Telephone"] ?? json["telephone"] ?? json["phoneNumber"],
         birthDate: json["BirthDate"] == null
             ? null
-            : DateTime.parse(json["BirthDate"]),
-        createdAt: json["CreatedAt"],
-        updatedAt: json["UpdatedAt"],
-        deletedAt: json["DeletedAt"],
-        password: json["Password"],
-        role: json["Role"],
-        token: json["Token"],
+            : DateTime.parse(json["BirthDate"] ?? json["birthDate"]),
+        createdAt: json["CreatedAt"] ?? json["createdAt"],
+        updatedAt: json["UpdatedAt"] ?? json["updatedAt"],
+        deletedAt: json["DeletedAt"] ?? json["deletedAt"],
+        password: json["Password"] ?? json["password"],
+        role: json["Role"] ?? json["role"],
+        token: json["Token"] ?? json["token"],
+        newPassword: json["NewPassword"] ?? json["newPassword"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -69,5 +77,6 @@ class Person {
         "Password": password,
         "Role": role,
         "Token": token,
+        "NewPassword": newPassword,
       };
 }

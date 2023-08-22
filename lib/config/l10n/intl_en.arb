@@ -1,8 +1,9 @@
 {
-    "message_sucess": "Was sucessfully registered.",
-    "message_error": "An internal problem occurredo.",
-    "message_email": "Mail is required",
-    "message_email2": "The entered value does not look like an email.",
+    
+    "msg_sucess": "Successful operation.",
+    "msg_required": "This Field is Required.",
+    "msg_error_500 ": "Internal Server Error.",
+    "msg_email_format_error": "Email format is incorrect.",
     "message_phone": "Phone is required.",
     "message_identification": "Identification required",
     "message_error_recovery": "Data does not match with the registered.",
@@ -46,8 +47,9 @@
     "option_type_passport": "Passport",
     "title_account": "Account",
     "title_register": "  Register User",
-    "tittle_register_general": "Información General",
+    "tittle_register_general": "General Information",
     "tittle_register_user": "User Information",
+    "title_register_contact_information": "Contact Information",
     "menu_task": "Task",
     "menu_report": "Reports",
     "menu_pizarra": "Releases",
@@ -60,5 +62,6 @@
     "title_message": "Messages",
     "tab_message_send": "Send",
     "tab_message_received": "Received",
-    "not_message": "No messages"
+    "not_message": "No messages",
+    "this_field_required": "This field cannot be empty."
 }

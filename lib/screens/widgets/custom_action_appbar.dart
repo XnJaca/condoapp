@@ -1,5 +1,5 @@
 import 'package:condo_app/config/router/app_router.dart';
-import 'package:condo_app/providers/auth_provider.dart';
+import 'package:condo_app/providers/user_provider.dart';
 import 'package:condo_app/providers/general_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,8 +36,11 @@ class ActionsAppBar extends ConsumerWidget {
                           : const Icon(Icons.email_outlined),
                       color: const Color.fromARGB(255, 0, 121, 121),
                       onPressed: () {
-                        Navigator.pushNamed(context, 'message',
-                            arguments: condoId);
+                        condoId.isEmpty
+                            ? ref
+                                .read(appRouterProvider)
+                                .push('/profile', extra: {'withScaffol': true})
+                            : ref.read(appRouterProvider).push('/messages');
                       },
                     ),
                     condoId.isNotEmpty

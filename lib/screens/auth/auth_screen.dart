@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:condo_app/config/theme/app_theme.dart';
-import 'package:condo_app/providers/auth_provider.dart';
+import 'package:condo_app/providers/user_provider.dart';
 import 'package:condo_app/screens/widgets/widgets.dart';
 import 'package:condo_app/utils/utils.dart';
 import 'package:flutter/material.dart';

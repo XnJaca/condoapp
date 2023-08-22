@@ -62,8 +62,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "lbl_yes": MessageLookupByLibrary.simpleMessage("Si"),
         "menu_home": MessageLookupByLibrary.simpleMessage("Inicio"),
         "menu_pizarra": MessageLookupByLibrary.simpleMessage("Comunicados"),
-        "menu_report": MessageLookupByLibrary.simpleMessage("Reportes"),
-        "menu_task": MessageLookupByLibrary.simpleMessage("Tareas"),
+        "menu_reservations":
+            MessageLookupByLibrary.simpleMessage("Reservaciones"),
+        "menu_visitors": MessageLookupByLibrary.simpleMessage("Visitantes"),
         "message_date":
             MessageLookupByLibrary.simpleMessage("Se requiere la fecha."),
         "message_date_birth": MessageLookupByLibrary.simpleMessage(

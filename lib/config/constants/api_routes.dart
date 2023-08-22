@@ -15,4 +15,7 @@ class ApiRoute {
   static const String MESSAGE = '${BASE_URL}message/new/';
   static const String MESSAGE_RECIVED = '${BASE_URL}message/received/';
   static const String MESSAGE_SENT = '${BASE_URL}message/sent/';
+  static const String POSTS_RECIEVED = '${BASE_URL}post/received/';
+  static const String GET_VISITORS = '${BASE_URL}visitor/person/';
+  static const String POST_VISITORS = '${BASE_URL}visitor';
 }
