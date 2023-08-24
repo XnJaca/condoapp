@@ -1,11 +1,9 @@
 // ignore_for_file: unrelated_type_equality_checks
 
-import 'package:condo_app/config/generated/generated.dart';
 import 'package:condo_app/config/theme/app_theme.dart';
 import 'package:condo_app/models/models.dart';
 import 'package:condo_app/providers/user_provider.dart';
 import 'package:condo_app/screens/screens.dart';
-import 'package:condo_app/screens/widgets/custom_dropdown_field.dart';
 import 'package:condo_app/utils/secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -145,7 +143,7 @@ class UserInformationContainerState
                   const SizedBox(height: 20),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: Size(size.width * 0.3, 50),
+                      minimumSize: Size(size.width * 1, 50),
                       backgroundColor: AppTheme.primaryLight,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),

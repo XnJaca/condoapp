@@ -1,5 +1,6 @@
 import 'package:condo_app/models/person.dart';
 import 'package:condo_app/providers/user_provider.dart';
+import 'package:condo_app/screens/account/pages/account_state.dart';
 import 'package:condo_app/screens/screens.dart';
 import 'package:condo_app/screens/visitors/pages/visitor_register_page.dart';
 import 'package:condo_app/screens/visitors/visitors.dart';
@@ -45,6 +46,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         name: ProfileScreen.name,
         builder: (context, state) => const ProfileScreen(true),
       ),
+      GoRoute(
+          path: '/account_state',
+          name: AccountStatePage.name,
+          builder: (context, state) => const AccountStatePage()),
 
       // Visitors
       GoRoute(

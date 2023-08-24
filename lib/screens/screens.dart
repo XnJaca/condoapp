@@ -1,4 +1,4 @@
-export 'account/account_screen.dart';
+export 'account/profile_screen.dart';
 export 'account/widgets/user_information_container.dart';
 export 'account/widgets/widgets.dart';
 export 'auth/auth_screen.dart';

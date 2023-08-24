@@ -7,3 +7,4 @@ export 'report.dart';
 export 'tipo_identificacion.dart';
 export 'user.dart';
 export 'visitor.dart';
+export 'white_list.dart';

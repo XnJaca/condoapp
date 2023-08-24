@@ -12,38 +12,40 @@ class VisitorRecordsPage extends ConsumerWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Visitas',
-            style: TextStyle(color: AppTheme.primaryLight),
-          ),
-          centerTitle: true,
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            color: Colors.black,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          toolbarHeight: 80,
+      appBar: AppBar(
+        title: const Text(
+          'Visitas',
+          style: TextStyle(color: AppTheme.primaryLight),
         ),
-        body: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          color: Colors.black,
+          onPressed: () {
+            Navigator.pop(context);
           },
-          child: Center(
-              child: Column(
+        ),
+        toolbarHeight: 80,
+      ),
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              SizedBox(
-                width: size.width * 0.8,
-                child: const FormVisit(),
+              FormVisit(),
+              SizedBox(height: 20),
+              const Text(
+                'Registro de visitas',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              const Expanded(
-                child: VisitorsList(),
-              )
+              VisitorsList(),
             ],
-          )),
-        ));
+          ),
+        ),
+      ),
+    );
   }
 }

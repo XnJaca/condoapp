@@ -1,3 +1,4 @@
+import 'package:condo_app/config/router/app_router.dart';
 import 'package:condo_app/screens/account/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,8 +33,25 @@ class UserAccountScreenState extends ConsumerState<ProfileScreen> {
               ),
               toolbarHeight: 80,
             ),
-            body: const UserInformationContainer(),
+            body: const SingleChildScrollView(
+              child: Column(
+                children: [
+                  UserInformationContainer(),
+                ],
+              ),
+            ),
           )
-        : const UserInformationContainer();
+        : SingleChildScrollView(
+            child: Column(
+              children: [
+                const UserInformationContainer(),
+                TextButton(
+                    onPressed: () {
+                      ref.read(appRouterProvider).push('/account_state');
+                    },
+                    child: const Text("Ver Estado de Cuenta"))
+              ],
+            ),
+          );
   }
 }

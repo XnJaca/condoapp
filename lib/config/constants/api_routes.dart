@@ -18,4 +18,5 @@ class ApiRoute {
   static const String POSTS_RECIEVED = '${BASE_URL}post/received/';
   static const String GET_VISITORS = '${BASE_URL}visitor/person/';
   static const String POST_VISITORS = '${BASE_URL}visitor';
+  static const String GET_WHITE_LIST = '${BASE_URL}whitelist/condominium/';
 }

@@ -13,6 +13,7 @@ class VisitorsList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
     final List<Visitor?> visitors = ref.watch(visitorListProvider);
+
     return SizedBox(
       width: size.width * 0.8,
       child: ref.watch(visitorsListProvider).when(
@@ -20,16 +21,13 @@ class VisitorsList extends ConsumerWidget {
               return RefreshIndicator(
                 onRefresh: () => ref.refresh(visitorsListProvider.future),
                 child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   itemCount: data.length,
                   itemBuilder: (context, index) {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Registro de visitas',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
                         const SizedBox(height: 20),
                         ListTile(
                           leading: const Icon(

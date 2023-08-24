@@ -15,9 +15,10 @@ class _VisitorsScreenState extends State<VisitorsScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    print(size);
     return Center(
       child: SizedBox(
-        width: size.width * 0.6,
+        width: size.width < 600 ? size.width * 0.9 : size.width * 0.6,
         child: ListView(
           padding: const EdgeInsets.all(20),
           children: const [
