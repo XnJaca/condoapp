@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 class VisitorRegisterPage extends StatelessWidget {
   static const name = 'VisitorRegisterPage';
@@ -21,7 +22,9 @@ class VisitorRegisterPage extends StatelessWidget {
         toolbarHeight: 80,
       ),
       body: const Center(
-        child: Text('RegisterPage'),
+        child: FormBuilder(
+          child: Column(),
+        ),
       ),
     );
   }
