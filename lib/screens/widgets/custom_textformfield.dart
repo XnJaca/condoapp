@@ -23,7 +23,7 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.maxLength,
     this.maxLines,
-    this.borderRadius = 50.0,
+    this.borderRadius = 20.0,
   });
 
   @override
@@ -37,6 +37,8 @@ class CustomTextField extends StatelessWidget {
         maxLines: maxLines,
         decoration: InputDecoration(
           labelText: labelText,
+          contentPadding: const EdgeInsets.only(
+              top: 20.0, bottom: 0.0, left: 30.0, right: 10.0),
           hintStyle: const TextStyle(color: Colors.grey),
           hintText: hintText,
           border: OutlineInputBorder(

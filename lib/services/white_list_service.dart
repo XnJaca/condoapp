@@ -31,4 +31,23 @@ class WhiteListService {
       throw Exception("Error al obtener la lista blanca");
     }
   }
+
+  Future<bool> registerWhiteList(ref, WhiteList whiteList) async {
+    final Person user = ref.read(userProvider);
+    final String idCondominio = ref.read(condominioId);
+
+    final response = await dio.post(
+      "${ApiRoute.REGISTER_WHITE_LIST}$idCondominio/${user.id}",
+      data: whiteList.toJson(),
+      options: Options(
+        headers: {"Authorization": user.token},
+      ),
+    );
+
+    if (response.statusCode == 200 && response.data["Result"] != null) {
+      return true;
+    } else {
+      throw Exception("Error al registrar la lista blanca");
+    }
+  }
 }

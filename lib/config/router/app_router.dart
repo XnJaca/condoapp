@@ -1,9 +1,7 @@
 import 'package:condo_app/models/person.dart';
 import 'package:condo_app/providers/user_provider.dart';
-import 'package:condo_app/screens/account/pages/account_state.dart';
 import 'package:condo_app/screens/screens.dart';
-import 'package:condo_app/screens/visitors/pages/visitor_register_page.dart';
-import 'package:condo_app/screens/visitors/visitors.dart';
+import 'package:condo_app/screens/visitors/pages/white_list/register_white_list.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -68,6 +66,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           path: '/visitors/white-list',
           name: VisitorWhiteListPage.name,
           builder: (context, state) => const VisitorWhiteListPage()),
+      GoRoute(
+          path: '/visitors/white-list/register',
+          name: RegisterWhiteList.name,
+          builder: (context, state) => const RegisterWhiteList()),
 
       // Visitors Records
       GoRoute(
