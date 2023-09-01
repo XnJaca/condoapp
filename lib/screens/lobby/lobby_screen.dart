@@ -33,7 +33,7 @@ class LobbyScreenState extends ConsumerState<LobbyScreen> {
     final screens = [
       const FincaScreen(),
       const VisitorsScreen(),
-      const Center(child: Text("Reportes Screen")),
+      const ReservationsScreen(),
       const BoardScreen(),
       const ProfileScreen(false),
     ];
